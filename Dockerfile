@@ -1,6 +1,6 @@
 FROM opspresso/builder:v0.6.9
 
-LABEL "com.github.actions.name"="Bump Version"
+LABEL "com.github.actions.name"="Version Bump"
 LABEL "com.github.actions.description"="Increase the patch version."
 LABEL "com.github.actions.icon"="tag"
 LABEL "com.github.actions.color"="blue"
