@@ -1,9 +1,9 @@
-# Bump Version
+# Version Bump
 
 ## Usage
 
 ```yaml
-name: Bump Version
+name: Version Bump
 
 on: push
 
