@@ -17,5 +17,5 @@ jobs:
           fetch-depth: 1
 
       - name: Bump Version
-        uses: opspresso/action-builder@master
+        uses: opspresso/action-version@master
 ```
