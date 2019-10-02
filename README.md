@@ -1,5 +1,8 @@
 # Version Bump
 
+[![GitHub Actions status](https://github.com/opspresso/action-version/workflows/Build-Push/badge.svg)](https://github.com/opspresso/action-version/actions)
+[![GitHub Releases](https://img.shields.io/github/release/opspresso/action-version.svg)](https://github.com/opspresso/action-version/releases)
+
 ## Usage
 
 ```yaml
