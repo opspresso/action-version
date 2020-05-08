@@ -36,9 +36,9 @@ jobs:
       - name: Docker Build & Push to AWS ECR
         uses: opspresso/action-docker@master
         with:
-          args: --ecr
+          registry-type: --ecr
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "ap-northeast-2"
-          registry-type: --ecr
+          # registry-type: --ecr
