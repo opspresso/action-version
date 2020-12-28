@@ -43,14 +43,14 @@ _version() {
 
     VERSION=$(cat /tmp/releases | jq -r '.[] | .tag_name' | grep "${MAJOR}.${MINOR}." | cut -d'-' -f1 | sort -Vr | head -1)
 
-    if [ -z ${VERSION} ]; then
+    if [ -z "${VERSION}" ]; then
       VERSION="${MAJOR}.${MINOR}.0"
     fi
 
     echo "VERSION: ${VERSION}"
 
     # new version
-    if [ "${GITHUB_REF}" == "refs/heads/master" ]; then
+    if [ "${GITHUB_REF}" == "refs/heads/main" ] || [ "${GITHUB_REF}" == "refs/heads/master" ]; then
       VERSION=$(echo ${VERSION} | awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g')
     else
       if [ "${GITHUB_REF}" != "" ]; then
