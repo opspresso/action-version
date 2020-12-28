@@ -26,9 +26,11 @@ _version() {
     VERSION="${MAJOR}.${MINOR}.${PATCH}"
     printf "${VERSION}" > ./VERSION
   else
-    # latest versions
+    AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
+
     URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/releases"
-    VERSION=$(curl -s ${URL} | jq -r '.[] | .tag_name' | grep "${MAJOR}.${MINOR}." | cut -d'-' -f1 | sort -Vr | head -1)
+
+    VERSION=$(curl -sSL -H \"${AUTH_HEADER}\" ${URL} | jq -r '.[] | .tag_name' | grep "${MAJOR}.${MINOR}." | cut -d'-' -f1 | sort -Vr | head -1)
 
     if [ -z ${VERSION} ]; then
       VERSION="${MAJOR}.${MINOR}.0"
